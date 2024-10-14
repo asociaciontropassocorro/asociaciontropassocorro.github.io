@@ -1,0 +1,619 @@
+/* CSS Variables */
+:root {
+    --main-bg: rgba(255, 255, 255, 0.8); /* Aumenta la opacidad del fondo */
+    --secondary-bg: rgba(0, 0, 0, 0.7); /* Aumenta la opacidad del fondo */
+    --primary-color: #1b1b1b; /* Cambia el color principal a un tono más claro */
+    --secondary-color: #F7F9F9; /* Cambia el color principal a un tono más claro */
+    --highlight-color: #c94539;
+    --link-hover-color:rgb(233, 143, 143);
+    --border-radius: 8px;
+    --section-padding: 40px; /* Nueva variable para padding en las secciones */
+}
+
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.background-bg{
+    background: var(--main-bg);
+}
+
+body {
+    font-family: 'Roboto Slab', sans-serif;
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, rgba(28, 40, 51, 0.7), rgba(52, 73, 94, 0.7)),
+    url('./src/img/banner.webp');
+    background-size: cover;
+    background-position: center;
+    color: #F7F9F9;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid var(--highlight-color);
+    /* animation: fadeInDown 1s ease-in-out; */
+}
+
+header h1 {
+    font-family: 'Bungee Tint', sans-serif;
+    font-size: 45px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+header h2 {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+header .logo img {
+    max-width: 200px;
+    border: 2px solid var(--highlight-color);
+    border-radius: var(--border-radius);
+    padding: 5px;
+    animation: bounceIn 1s ease-in-out;
+}
+
+/* Navigation */
+nav {
+    background: var(--secondary-bg);
+    padding: 10px 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--highlight-color);
+    left: 0;
+    bottom: -5px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--highlight-color);
+}
+
+nav ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Sticky navbar */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+  .sticky + .content {
+    padding-top: 60px;
+  }
+
+
+/* Hero Section */
+.start {
+    text-align: center;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    animation: fadeInUp 1s ease-in-out;
+    padding-bottom: 30px;
+    border-bottom: 5px dashed var(--highlight-color);
+}
+
+
+.start img {
+    max-width: 40%;
+    height: auto;
+    border: 3px solid var(--highlight-color);
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.start img:hover {
+    transform: scale(1.05);
+}
+
+.document {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.document:hover {
+    color: var(--link-hover-color)   ;
+    border-radius: var(--border-radius);
+}
+
+/* Sections (About and Description) */
+.activities, .description{
+    font-size: 20px;
+    padding: var(--section-padding) 10%;
+    border-bottom: 5px dashed var(--highlight-color);
+    color: var(--primary-color);
+    margin: 40px 0; /* Mayor separación entre secciones */
+    animation: fadeIn 1s ease-in-out;
+    /* box-shadow: 0 4px 10px var(--main-bg); */
+}
+.description p{
+    padding: 0.8rem;
+}
+
+.description a {
+    color: var(--highlight-color);
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.description a:hover {
+    color: var(--link-hover-color)   ;
+    border-radius: var(--border-radius);
+}
+
+/* Titles */
+.title {
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 3.5rem;
+    color: var(--highlight-color);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    color: #fff; /* Texto blanco */
+    border-radius: 8px;
+    overflow: hidden;
+    font-family: 'Roboto Slab', sans-serif;
+    font-size: 18px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animación de entrada para toda la tabla */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+th, td {
+    padding: 15px 20px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Bordes sutiles */
+    transition: all 0.3s ease;
+}
+
+/* Encabezado más vistoso */
+th {
+    background: linear-gradient(to right, #d35400, #e67e22); /* Gradiente naranja para los encabezados */
+    color: #fff; /* Texto blanco */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #c0392b; /* Borde rojo oscuro */
+    font-size: 1.2em; /* Tamaño de fuente aumentado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra sutil para el texto */
+    animation: fadeIn 1s ease-in-out 0.5s backwards; /* Animación con retardo */
+}
+
+td {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para las celdas */
+}
+
+.activities a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.activities a:hover{
+    color: var(--link-hover-color)
+}
+
+td:hover {
+    background-color: rgba(88, 88, 88, 0.7); /* Naranja oscuro al pasar el mouse */
+}
+
+/* Alternar colores para filas pares */
+tr:nth-child(even) td {
+    background-color: rgba(0, 0, 0, 0.4); /* Ligeramente diferente para filas pares */
+}
+tr:nth-child(even) td:hover{
+    background-color: rgba(88, 88, 88, 0.7); 
+}
+
+tr:last-child td {
+    border-bottom: none;
+    border-radius: 0 0 8px 8px;
+    animation: slideUp 0.8s ease-in-out;
+}
+
+
+/* Animación de deslizamiento hacia arriba para la última fila */
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Sección "Galería" */
+.gallery{
+
+    padding: 50px;
+}
+.gallery-pics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 60px;
+    padding: var(--section-padding);
+    border-radius: var(--border-radius);
+    border: 3px solid rgba(110, 6, 6, 0.689);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* Sección "Únete" */
+.join {
+    padding: var(--section-padding) 10%;
+    border-left: 15px solid var(--highlight-color);
+    border-bottom: 5px dashed var(--highlight-color);
+    border-radius: var(--border-radius);
+    /* box-shadow: 0 4px 8px var(--main-bg); */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.join h4{
+    font-style: 'Roboto Slab';
+    text-transform:uppercase;
+    font-size: 2em;
+    color: var(--highlight-color);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+
+
+.join p {
+    font-size: 18px;
+    padding-bottom: 10px;
+    color: var(--primary-color);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.join a {
+    color: var(--highlight-color);
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.join a:hover {
+    color: var(--link-hover-color);
+    
+}
+
+/* Sección Contacto */
+.contact {
+    padding: var(--section-padding) 10%;
+    border-right: 15px solid var(--highlight-color);
+    border-radius: var(--border-radius);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.contact p {
+    font-size: 18px;
+    color: var(--primary-color);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.contact a {
+    color: var(--highlight-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--link-hover-color);
+    border-radius: var(--border-radius);
+}
+[id^="phone-number"]{
+    cursor: pointer;
+}
+[id^="phone-number"]:hover{
+    color: var(--link-hover-color);
+    transition: color 0.3s ease;
+}
+
+
+/* Footer */
+footer {
+    background: rgba(62, 47, 45, 0.95);
+    color: var(--secondary-color);
+    text-align: center;
+    padding: 10px 0;
+    border-top: 5px solid rgba(39, 10, 10, 0.945);
+    border-bottom: 5px solid rgba(39, 10, 10, 0.945);
+    border-radius: var(--border-radius);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+footer a {
+        color: var(--secondary-color);
+    text-decoration: none;
+    padding-left: 15px;
+}
+.author{
+    color: var(--highlight-color);
+    text-decoration: none;
+    padding-left: 15px;
+}
+
+footer a:hover {
+    color: var(--highlight-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Background with Animation */
+body {
+    background-image: url('./src/img/background.webp');
+    background-size: 100%; /* Ajuste inicial del tamaño de la imagen */
+    background-attachment: fixed; /* Fija la imagen mientras se hace scroll */
+    background-position: center; /* Centra la imagen */
+    color: var(--primary-color);
+    font-family: 'Roboto Slab', sans-serif;
+    line-height: 1.6;
+    animation: slidein 20s infinite alternate ease-in-out; /* Ajuste de la animación */
+}
+
+/* Background Animation */
+@keyframes slidein {
+    0% {
+        background-position: center; /* Posición inicial centrada */
+        background-size: 100%; /* Tamaño inicial de la imagen */
+    }
+    50% {
+        background-position: top center; /* Desplaza la imagen hacia arriba */
+        background-size: 110%; /* Aumenta el tamaño de la imagen */
+    }
+    100% {
+        background-position: bottom center; /* Desplaza la imagen hacia abajo */
+        background-size: 100%; /* Vuelve al tamaño inicial */
+    }
+}
+
+
+/* Media Queries */
+/* Media Queries for responsiveness */
+@media (max-width: 1450px) {
+    body {
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: none;
+        transition: all 0.3s ease; /* Transición suave para cambios */
+    }
+    header h1 {
+        font-size: 3rem;
+        transition: all 0.3s ease; /* Transición suave para cambios */
+    }
+    .join h4 {
+        font-size: 1.85rem;
+    }
+    .start img {
+        max-width: 60%;
+        height: auto; /* Asegura que no se distorsione la imagen */
+        transition: all 0.3s ease;
+    }
+    .gallery-pics {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+    }
+    nav ul li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header .logo img {
+        max-width: 150px;
+    }
+    header h1 {
+        font-size: 2.5rem;
+        transition: all 0.3s ease;
+    }
+    header h2 {
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+    }
+    .start img {
+        max-width: 80%;
+        height: auto;
+        transition: all 0.3s ease;
+    }
+    .description, .activities, .join, .contact {
+        padding: 20px 5vw; /* Padding dinámico usando vw */
+    }
+    .gallery-pics {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+    }
+    .title {
+        font-size: 2.5rem;
+        transition: all 0.3s ease;
+    }
+    nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+    nav a {
+        font-size: 14px;
+        display: inline-block;
+        padding: 5px;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: min(1.6rem, 5vw); /* Ajuste de fuente dinámico */
+    }
+    header h1 {
+        font-size: 2rem;
+        transition: all 0.3s ease;
+    }
+    header h2 {
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    .start img {
+        max-width: 100%;
+        height: auto;
+        transition: all 0.3s ease;
+    }
+    .title {
+        font-size: 2rem;
+        transition: all 0.3s ease;
+    }
+    nav a {
+        font-size: 12px;
+        display: inline-block;
+        padding: 5px;
+        text-decoration: none;
+    }
+    .gallery-pics {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+    }
+    table {
+        font-size: 14px;
+    }
+}

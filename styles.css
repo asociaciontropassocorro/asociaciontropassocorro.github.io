@@ -364,7 +364,7 @@ tr:last-child td {
 
 .interpretation-pics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: 60px;
   padding: var(--section-padding);
   border-radius: var(--border-radius);

@@ -348,18 +348,43 @@ tr:last-child td {
 .interpretation {
   padding: var(--section-padding) 10%;
   /* border-left: 15px solid var(--highlight-color); */
-  border-bottom: 5px dashed var(--highlight-color);
-  border-radius: var(--border-radius);
+  /* border-bottom: 5px dashed var(--highlight-color);*/
+  /* border-radius: var(--border-radius);*/
   /* box-shadow: 0 4px 8px var(--main-bg); */
   animation: fadeIn 1s ease-in-out;
 }
 
 .interpretation p {
-  font-size: 18px;
+  font-size: 20px;
+  padding: 12.8px;
   color: var(--primary-color);
   line-height: 1.8;
   text-align: justify;
 }
+
+.interpretation-pics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 60px;
+  padding: var(--section-padding);
+  border-radius: var(--border-radius);
+  /* border: 3px solid rgba(110, 6, 6, 0.689);*/
+  animation: fadeIn 1s ease-in-out;
+}
+
+.interpretation img {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interpretation img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
 /* Sección "Únete" */
 .join {
   padding: var(--section-padding) 10%;
